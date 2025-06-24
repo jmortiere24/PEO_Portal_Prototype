@@ -65,16 +65,7 @@ def dashboard():
         st.markdown("## Hello Heather")
         st.write("Here's what we have for you today!")
     with col_right:
-        st.image("onedigital_logo.png", width=140)
-
-    # --- Three Tiles Across the Top ---
-    col1, col2, col3 = st.columns(3, gap="large")
-
-    # ... (rest of your tile/card code goes here) ...
-    # --- Three Tiles Across the Top ---
-    col1, col2, col3 = st.columns(3, gap="large")
-    # Display the OneDigital logo from a public URL
-    st.image("https://www.onedigital.com/wp-content/themes/onedigital/assets/images/logo.svg", width=200)
+        st.image("onedigital_logo.PNG", width=140)
 
     # --- Three Tiles Across the Top ---
     col1, col2, col3 = st.columns(3, gap="large")
