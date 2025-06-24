@@ -19,10 +19,6 @@ st.markdown("""
     color: #004B49;
     margin-bottom: 0.5rem;
 }
-.card-divider {
-    border-bottom: 1px solid #E0E0E0;
-    margin: 1rem 0;
-}
 .stButton>button {
     background-color: #004B49;
     color: white;
@@ -62,23 +58,21 @@ selected = option_menu(
 )
 
 def dashboard():
-    st.image("https://storage.googleapis.com/markprompt-images/onedigital_logo.png", width=180)
-    st.write("")
+    st.markdown('<div class="card">', unsafe_allow_html=True)
+    st.image("https://upload.wikimedia.org/wikipedia/commons/6/6b/OneDigital_Logo.png", width=180)
+    st.markdown("</div>", unsafe_allow_html=True)
 
-    # Main content area
     col_main, col_side = st.columns([2, 1], gap="large")
 
     with col_main:
-        with st.container():
-            st.markdown('<div class="card">', unsafe_allow_html=True)
-            st.markdown('<div class="card-header">FEATURED</div>', unsafe_allow_html=True)
-            st.markdown("### Using a Mortgage to your Advantage")
-            st.write("Choosing the right mortgage isn’t just about securing a loan – it’s locking in a commitment that will facilitate your homeownership a...")
-            st.button("Watch Now ➔", type="secondary")
-            st.image("https://storage.googleapis.com/markprompt-images/mortgage_journey.png")
-            st.markdown("</div>", unsafe_allow_html=True)
+        st.markdown('<div class="card">', unsafe_allow_html=True)
+        st.markdown('<div class="card-header">FEATURED</div>', unsafe_allow_html=True)
+        st.markdown("### Using a Mortgage to your Advantage")
+        st.write("Choosing the right mortgage isn’t just about securing a loan – it’s locking in a commitment that will facilitate your homeownership a...")
+        st.button("Watch Now ➔", type="secondary")
+        st.image("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", use_column_width=True)
+        st.markdown("</div>", unsafe_allow_html=True)
 
-        # Tools & Resources row
         col_tools, col_calc = st.columns(2, gap="large")
         with col_tools:
             st.markdown('<div class="card">', unsafe_allow_html=True)
@@ -95,7 +89,6 @@ def dashboard():
             st.markdown("</div>", unsafe_allow_html=True)
 
     with col_side:
-        # Advisor Card
         st.markdown('<div class="card">', unsafe_allow_html=True)
         st.markdown('<div class="card-header">Your Advisor Team</div>', unsafe_allow_html=True)
         st.write("**Taylor Scott**")
@@ -105,17 +98,15 @@ def dashboard():
         st.button("Schedule Consultation", key="advisor_contact")
         st.markdown("</div>", unsafe_allow_html=True)
 
-        # Benefit Enrollment
         st.markdown('<div class="card">', unsafe_allow_html=True)
         st.markdown('<div class="card-header">Benefit Enrollment</div>', unsafe_allow_html=True)
-        st.image("https://storage.googleapis.com/markprompt-images/the_standard_logo.png", width=120)
+        st.image("https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80", width=120)
         st.button("Enroll Here", key="enroll")
         st.markdown("</div>", unsafe_allow_html=True)
 
-        # Retirement Plan
         st.markdown('<div class="card">', unsafe_allow_html=True)
         st.markdown('<div class="card-header">Retirement Plan</div>', unsafe_allow_html=True)
-        st.image("https://storage.googleapis.com/markprompt-images/401k_baynum.png", width=150)
+        st.image("https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80", width=150)
         st.button("View Your Retirement Plan Highlights", key="401k")
         st.markdown("</div>", unsafe_allow_html=True)
 
