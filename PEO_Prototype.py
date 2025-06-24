@@ -12,6 +12,7 @@ st.markdown("""
     box-shadow: 0 2px 12px 0 rgba(0,0,0,0.07);
     padding: 2rem 2rem 1.5rem 2rem;
     margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 .card-header {
     font-size: 1.2rem;
@@ -56,16 +57,20 @@ selected = option_menu(
         "nav-link-selected": {"background-color": "#E0E0E0", "color": "#004B49", "font-weight": "bold"},
     },
 )
+
 def dashboard():
-    # Show the OneDigital logo at the top
-    st.image("onedigital_logo.png", width=200)
+    # Display the OneDigital logo from a public URL
+    st.image("https://www.onedigital.com/wp-content/themes/onedigital/assets/images/logo.svg", width=200)
 
     # --- Three Tiles Across the Top ---
     col1, col2, col3 = st.columns(3, gap="large")
 
     with col1:
         st.markdown('<div class="card" style="text-align:center;">', unsafe_allow_html=True)
-        st.image("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80", use_container_width=True)
+        st.image(
+            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
+            use_container_width=True
+        )
         st.markdown("#### OneDigital PEO Solutions")
         st.write("Discover the difference of partnering with OneDigital for your business success.")
         st.markdown(
@@ -78,7 +83,10 @@ def dashboard():
 
     with col2:
         st.markdown('<div class="card" style="text-align:center;">', unsafe_allow_html=True)
-        st.image("https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80", use_container_width=True)
+        st.image(
+            "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
+            use_container_width=True
+        )
         st.markdown("#### On-Demand Webinar")
         st.write("Watch our on-demand webinar to help you weigh your options.")
         st.markdown(
@@ -91,7 +99,10 @@ def dashboard():
 
     with col3:
         st.markdown('<div class="card" style="text-align:center;">', unsafe_allow_html=True)
-        st.image("https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80", use_container_width=True)
+        st.image(
+            "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+            use_container_width=True
+        )
         st.markdown("#### Contact OneDigital PEO")
         st.write("Connect with our team of fierce advocates for your business.")
         st.markdown(
@@ -101,6 +112,7 @@ def dashboard():
             unsafe_allow_html=True
         )
         st.markdown("</div>", unsafe_allow_html=True)
+
 def hr_tools():
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.title("HR Tools")
