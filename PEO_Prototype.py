@@ -57,10 +57,8 @@ selected = option_menu(
     },
 )
 def dashboard():
-    # Use a working logo image or your own hosted logo
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.image("https://www.onedigital.com/wp-content/themes/onedigital/assets/images/logo.svg", width=180)
-    st.markdown("</div>", unsafe_allow_html=True)
+    # Show the OneDigital logo at the top
+    st.image("onedigital_logo.png", width=200)
 
     # --- Three Tiles Across the Top ---
     col1, col2, col3 = st.columns(3, gap="large")
@@ -103,7 +101,6 @@ def dashboard():
             unsafe_allow_html=True
         )
         st.markdown("</div>", unsafe_allow_html=True)
-
 def hr_tools():
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.title("HR Tools")
