@@ -1,86 +1,128 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title="OneDigital Client Portal", layout="wide")
 
-# --- CUSTOM CSS for cards/tiles ---
+# --- Custom CSS for a tight, modern nav bar and header ---
 st.markdown("""
 <style>
-.card-tile {
-    background-color: #fff;
-    border-radius: 14px;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.07);
-    border: 1.5px solid #e0e0e0;
-    padding: 2rem 1.5rem 1.5rem 1.5rem;
-    margin-bottom: 2rem;
-    margin-top: 0.5rem;
-    min-height: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: box-shadow 0.2s;
+/* NAV BAR */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+div[data-testid="stHorizontalBlock"] > div {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
 }
-.card-tile:hover {
-    box-shadow: 0 6px 24px 0 rgba(0,0,0,0.13);
-    border-color: #b2dfdb;
+div[data-testid="stHorizontalBlock"] {
+    background: #fff !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    margin-bottom: 0.5rem !important;
 }
-.card-img {
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    width: 160px;
-    height: 100px;
-    object-fit: cover;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+.st-emotion-cache-1v0mbdj {
+    padding-top: 0.5rem !important;
 }
-.card-title {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #004B49;
-    margin-bottom: 0.5rem;
-    margin-top: 0.2rem;
+.st-emotion-cache-1v0mbdj, .st-emotion-cache-1v0mbdj > div {
+    margin-bottom: 0 !important;
 }
-.card-desc {
-    font-size: 1rem;
-    color: #222;
-    margin-bottom: 1.2rem;
+.st-emotion-cache-1v0mbdj > div > div {
+    margin-bottom: 0 !important;
 }
-.stButton>button {
-    background-color: #004B49;
-    color: white;
-    border-radius: 6px;
-    padding: 0.5rem 1.5rem;
-    border: none;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+.st-emotion-cache-1v0mbdj > div > div > div {
+    margin-bottom: 0 !important;
 }
-.stButton>button:hover {
-    background-color: #006F6B;
+.st-emotion-cache-1v0mbdj > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
+}
+.st-emotion-cache-1v0mbdj > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div {
+    margin-bottom: 0 !important;
 }
 </style>
 """, unsafe_allow_html=True)
 
-# --- TOP NAVIGATION (HR Tools removed) ---
-selected = option_menu(
-    menu_title=None,
-    options=["Dashboard", "Compliance Hub", "Case Management"],
-    icons=["speedometer2", "shield-check", "envelope-paper"],
-    menu_icon="cast",
-    default_index=0,
-    orientation="horizontal",
-    styles={
-        "container": {"padding": "0!important", "background-color": "#FFFFFF", "border-bottom": "1px solid #E0E0E0"},
-        "icon": {"color": "#004B49", "font-size": "20px"},
-        "nav-link": {
-            "font-size": "16px",
-            "font-weight": "500",
-            "color": "#333333",
-            "text-align": "center",
-            "margin": "0px 10px",
-            "--hover-color": "#F0F2F6",
-        },
-        "nav-link-selected": {"background-color": "#E0E0E0", "color": "#004B49", "font-weight": "bold"},
-    },
-)
+# --- NAV BAR (text only, compact) ---
+nav = st.columns([1,1,1,1,8])
+with nav[0]:
+    st.markdown('<b>Dashboard</b>', unsafe_allow_html=True)
+with nav[1]:
+    st.markdown('Compliance Hub', unsafe_allow_html=True)
+with nav[2]:
+    st.markdown('Case Management', unsafe_allow_html=True)
+with nav[3]:
+    st.markdown('', unsafe_allow_html=True)
+with nav[4]:
+    st.markdown('', unsafe_allow_html=True)
+
+# --- HEADER ---
+st.markdown("### Hello Jane,")
+st.write("Here's what we have for you today.")
+
+# --- Your tiles/cards go here ---
 
 def dashboard():
     # --- HEADER: Greeting left, logo right ---
