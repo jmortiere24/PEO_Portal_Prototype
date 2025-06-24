@@ -62,54 +62,47 @@ def dashboard():
     st.image("https://upload.wikimedia.org/wikipedia/commons/6/6b/OneDigital_Logo.png", width=180)
     st.markdown("</div>", unsafe_allow_html=True)
 
-    col_main, col_side = st.columns([2, 1], gap="large")
+    # --- Three Tiles Across the Top ---
+    col1, col2, col3 = st.columns(3, gap="large")
 
-    with col_main:
-        st.markdown('<div class="card">', unsafe_allow_html=True)
-        st.markdown('<div class="card-header">FEATURED</div>', unsafe_allow_html=True)
-        st.markdown("### Using a Mortgage to your Advantage")
-        st.write("Choosing the right mortgage isn’t just about securing a loan – it’s locking in a commitment that will facilitate your homeownership a...")
-        st.button("Watch Now ➔", type="secondary")
-        st.image("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", use_column_width=True)
+    with col1:
+        st.markdown('<div class="card" style="text-align:center;">', unsafe_allow_html=True)
+        st.image("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80", use_column_width=True)
+        st.markdown("#### OneDigital PEO Solutions")
+        st.write("Discover the difference of partnering with OneDigital for your business success.")
+        st.markdown(
+            '<a href="https://www.onedigital.com/solutions/peo/" target="_blank">'
+            '<button style="background-color:#004B49;color:white;padding:0.5rem 1.5rem;border:none;border-radius:6px;font-weight:600;">Learn More</button>'
+            '</a>',
+            unsafe_allow_html=True
+        )
         st.markdown("</div>", unsafe_allow_html=True)
 
-        col_tools, col_calc = st.columns(2, gap="large")
-        with col_tools:
-            st.markdown('<div class="card">', unsafe_allow_html=True)
-            st.markdown('<div class="card-header">Financial Academy</div>', unsafe_allow_html=True)
-            st.write("Empowering financial wellness through webinars, articles, and resources.")
-            st.button("Access Financial Academy Resources Here", key="fin_academy")
-            st.markdown("</div>", unsafe_allow_html=True)
-        with col_calc:
-            st.markdown('<div class="card">', unsafe_allow_html=True)
-            st.markdown('<div class="card-header">Tools & Calculators</div>', unsafe_allow_html=True)
-            st.button("Determine Your Net Worth", key="tool1")
-            st.button("How Can Systematic Investing Benefit You?", key="tool2")
-            st.button("What Is Your Life Expectancy?", key="tool3")
-            st.markdown("</div>", unsafe_allow_html=True)
-
-    with col_side:
-        st.markdown('<div class="card">', unsafe_allow_html=True)
-        st.markdown('<div class="card-header">Your Advisor Team</div>', unsafe_allow_html=True)
-        st.write("**Taylor Scott**")
-        st.write("*Payroll & HR Specialist*")
-        st.write("✉️ taylor.scott@onedigital.com")
-        st.write("📞 (123) 456-7890")
-        st.button("Schedule Consultation", key="advisor_contact")
+    with col2:
+        st.markdown('<div class="card" style="text-align:center;">', unsafe_allow_html=True)
+        st.image("https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80", use_column_width=True)
+        st.markdown("#### On-Demand Webinar")
+        st.write("Watch our on-demand webinar to help you weigh your options.")
+        st.markdown(
+            '<a href="https://event.on24.com/wcc/r/4248893/54A1D7E492C40AF5FEC8DF35C6D2918F?partnerref=peolp" target="_blank">'
+            '<button style="background-color:#004B49;color:white;padding:0.5rem 1.5rem;border:none;border-radius:6px;font-weight:600;">Watch Now</button>'
+            '</a>',
+            unsafe_allow_html=True
+        )
         st.markdown("</div>", unsafe_allow_html=True)
 
-        st.markdown('<div class="card">', unsafe_allow_html=True)
-        st.markdown('<div class="card-header">Benefit Enrollment</div>', unsafe_allow_html=True)
-        st.image("https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80", width=120)
-        st.button("Enroll Here", key="enroll")
+    with col3:
+        st.markdown('<div class="card" style="text-align:center;">', unsafe_allow_html=True)
+        st.image("https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80", use_column_width=True)
+        st.markdown("#### Contact OneDigital PEO")
+        st.write("Connect with our team of fierce advocates for your business.")
+        st.markdown(
+            '<a href="https://www.onedigital.com/solutions/peo/#Contact" target="_blank">'
+            '<button style="background-color:#004B49;color:white;padding:0.5rem 1.5rem;border:none;border-radius:6px;font-weight:600;">Contact Us</button>'
+            '</a>',
+            unsafe_allow_html=True
+        )
         st.markdown("</div>", unsafe_allow_html=True)
-
-        st.markdown('<div class="card">', unsafe_allow_html=True)
-        st.markdown('<div class="card-header">Retirement Plan</div>', unsafe_allow_html=True)
-        st.image("https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80", width=150)
-        st.button("View Your Retirement Plan Highlights", key="401k")
-        st.markdown("</div>", unsafe_allow_html=True)
-
 def hr_tools():
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.title("HR Tools")
