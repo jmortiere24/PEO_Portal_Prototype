@@ -59,6 +59,16 @@ selected = option_menu(
 )
 
 def dashboard():
+     # --- HEADER: Greeting left, logo right ---
+    col_left, col_right = st.columns([4, 1])
+    with col_left:
+        st.markdown("## Hello Heather")
+        st.write("Here's what we have for you today!")
+    with col_right:
+        st.image("https://www.onedigital.com/wp-content/themes/onedigital/assets/images/logo.svg", width=140)
+
+    # --- Three Tiles Across the Top ---
+    col1, col2, col3 = st.columns(3, gap="large")
     # Display the OneDigital logo from a public URL
     st.image("https://www.onedigital.com/wp-content/themes/onedigital/assets/images/logo.svg", width=200)
 
